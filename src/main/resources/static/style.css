@@ -1,0 +1,88 @@
+/* Scrollbar customizada e moderna */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Animação de entrada suave */
+.message-enter {
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+@keyframes slideUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Indicador de Digitando */
+.typing-indicator { display: flex; align-items: center; gap: 5px; padding: 4px; }
+.typing-indicator span {
+    display: inline-block; width: 6px; height: 6px;
+    background-color: #818cf8; border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+textarea {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+textarea::-webkit-scrollbar { display: none; }
+.custom-scrollbar::-webkit-scrollbar { display: block; width: 4px; }
+
+/* =========================================
+   ESTILOS PARA O MARKDOWN DA IA (CORREÇÃO)
+   ========================================= */
+.markdown-body {
+    word-wrap: break-word; /* Evita que o texto quebre a tela */
+    overflow-wrap: anywhere;
+}
+.markdown-body p { margin-bottom: 0.75rem; }
+.markdown-body p:last-child { margin-bottom: 0; }
+.markdown-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+.markdown-body ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+.markdown-body strong { color: #f8fafc; font-weight: 600; }
+
+/* Estilização dos blocos de código */
+.markdown-body pre {
+    background-color: #0d1117; /* Fundo mais escuro para o código */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto; /* Adiciona scroll horizontal SE o código for gigante */
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #334155;
+    font-size: 0.85rem;
+}
+.markdown-body code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+/* Estilização do código em linha (inline code) */
+.markdown-body p code, .markdown-body li code {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.375rem;
+    color: #818cf8;
+    font-size: 0.85em;
+}
+
+/* Correções de margem do Markdown para alinhar com o novo design */
+.markdown-body pre code {
+    white-space: pre !important;
+    word-break: normal !important;
+}
+
+.markdown-body p, .markdown-body ul, .markdown-body ol {
+    margin-bottom: 0.85rem;
+}
+
+.markdown-body *:last-child {
+    margin-bottom: 0;
+}
